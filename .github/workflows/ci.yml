@@ -1,0 +1,31 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Perform checkout
+        uses: actions/checkout@v2
+
+      - name: Install Python 3.9.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.7
+
+      - name: Install Poetry
+        uses: Gr1N/setup-poetry@v4
+
+      - name: Disables creation of virtualenvs
+        run: poetry config virtualenvs.create false
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Run tests
+        run: make test

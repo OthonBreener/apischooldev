@@ -1,4 +1,4 @@
-SRC_DIRS := src
+SRC_DIRS := app
 
 docker: down build up logs
 

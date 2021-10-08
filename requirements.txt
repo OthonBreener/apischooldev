@@ -42,3 +42,5 @@ uvloop==0.16.0
 virtualenv==20.8.1
 watchgod==0.7
 websockets==10.0
+coverage==6.0.1
+ward==0.64.0b0

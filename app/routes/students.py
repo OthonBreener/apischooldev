@@ -10,6 +10,6 @@ async def read_students():
 async def read_one_student():
     ...
 
-@router.post("/students"):
+@router.post("/students")
 async def add_students():
     ...

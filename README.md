@@ -7,7 +7,11 @@
 * pip install fastapi[all]
 
 1. uvicorn app.main:app --reload
-
+2. No navegador: localhost/docs
+3. Banco postgresql usado localmente:
+```sh
+docker run --name database_postgre -e POSTGRES_PASSWORD=senha -p 5432:5432 -d postgres:14
+```
 ## Utilizando o pre-commit
 
 1.

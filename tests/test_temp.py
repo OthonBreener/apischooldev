@@ -12,5 +12,4 @@ def client():
 @test('Teste temporário')
 def _(client=client):
     response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {"mensagem":"Olá Pessoas"}
+    assert response.status_code == 404

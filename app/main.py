@@ -1,10 +1,11 @@
 from fastapi import FastAPI
+from sqlmodel import SQLModel
+
+from app.db import engine
+from app.routes import students, teacher
 
 app = FastAPI()
+app.include_router(students.router)
+app.include_router(teacher.router)
 
-@app.get("/")
-async def root():
-    """
-    Função que diz oi!
-    """
-    return {"mensagem":"Olá Pessoas"}
+SQLModel.metadata.create_all(engine)

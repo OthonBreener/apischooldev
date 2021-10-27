@@ -15,7 +15,7 @@ logs:
 	docker-compose logs --follow api
 
 test:
-	coverage run --source=$(SRC_DIRS) --module ward --show-diff-symbols
+	coverage run --source=$(SRC_DIRS) --module ward
 	coverage report
 	coverage html
 
@@ -24,6 +24,7 @@ install:
 	pip install poetry
 	poetry install
 	poetry run pre-commit install
+
 format:
 	isort $(SRC_DIRS)
 	black $(SRC_DIRS)

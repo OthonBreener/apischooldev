@@ -13,6 +13,8 @@ class Student(SQLModel, table=True):
     name_mother: str
     name_father: str
 
+    teacher_id: Optional[int] = Field(default=None, foreign_key="teacher.id")
+
     @validator('name')
     def name_deve_ter_tamanho_limitado_para_5_caracters(cls, valor):
 
